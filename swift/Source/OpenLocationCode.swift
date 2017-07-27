@@ -16,12 +16,14 @@
 //
 //===----------------------------------------------------------------------===//
 //
-//  Convert between decimal degree coordinates and plus codes. Shorten and
-//  expand plus codes with a reference location.
+//  Convert between decimal degree coordinates and Open Location Codes. Shorten
+//  and expand Open Location Codes for a given reference location.
 //
 //  Authored by: William Denniss. Ported from openlocationcode.py.
 //
 //===----------------------------------------------------------------------===//
+
+import Foundation
 
 /// A separator used to break the code into two parts to aid memorability.
 let kSeparator: Character = "+"
@@ -190,25 +192,33 @@ let kSPCharset = CharacterSet.init(charactersIn: "+0")
 /// ```
 /// @import OpenLocationCode;
 /// // Encode a location, default accuracy.
-/// NSString* code = [OpenLocationCode encodeWithLatitude:47.365590
+/// NSString *code = [OpenLocationCode encodeWithLatitude:47.365590
 ///                                             longitude:8.524997
 ///                                            codeLength:10];
 ///
 /// // Encode a location using an additional digits of accuracy.
-/// NSString* codeExtraPrecise = [OpenLocationCode encodeWithLatitude:47.365590
+/// NSString *codeExtraPrecise = [OpenLocationCode encodeWithLatitude:47.365590
 ///                                                         longitude:8.524997
 ///                                                        codeLength:11];
 ///
 /// // Decode a full code:
-/// OpenLocationCodeArea* coord = [OpenLocationCode decode:@"8FVC9G8F+6X"];
+/// OpenLocationCodeArea *coord = [OpenLocationCode decode:@"8FVC9G8F+6X"];
 /// NSLog(@"Center is %f, %f", coord.latitudeCenter, coord.longitudeCenter);
 ///
 /// // Attempt to trim the first characters from a code:
-/// NSString* shortCode = [OpenLocationCode shortenWithCode:@"8FVC9G8F+6X" latitude:47.5 longitude:8.5];
+/// NSString *shortCode = [OpenLocationCode shortenWithCode:@"8FVC9G8F+6X"
+///                                                latitude:47.5
+///                                               longitude:8.5];
 ///
 /// // Recover the full code from a short coe:
-/// NSString* fullCodeA = [OpenLocationCode recoverNearestWithShortcode:@"9G8F+6X"  referenceLatitude:47.4  referenceLongitude:8.6];
-/// NSString* fullCodeB = [OpenLocationCode recoverNearestWithShortcode:@"8F+6X"  referenceLatitude:47.4  referenceLongitude:8.6];
+/// NSString *fullCodeA =
+///     [OpenLocationCode recoverNearestWithShortcode:@"9G8F+6X"
+///                                 referenceLatitude:47.4
+///                                referenceLongitude:8.6];
+/// NSString *fullCodeB =
+///     [OpenLocationCode recoverNearestWithShortcode:@"8F+6X"
+///                                 referenceLatitude:47.4
+///                                referenceLongitude:8.6];
 /// ```
 ///
 @objc public class OpenLocationCode: NSObject {
@@ -430,7 +440,6 @@ let kSPCharset = CharacterSet.init(charactersIn: "+0")
   public static func encodeGrid(latitude: Double,
                                 longitude: Double,
                                 codeLength: Int) -> String {
-
     var code: String = ""
     var latPlaceValue = kGridSizeDegrees
     var lngPlaceValue = kGridSizeDegrees
@@ -478,7 +487,7 @@ let kSPCharset = CharacterSet.init(charactersIn: "+0")
                             longitude: Double,
                             codeLength: Int = kPairCodeLength) -> String? {
     if codeLength < 2
-      || (codeLength < kSeparatorPosition && codeLength % 2 == 1) {
+      || (codeLength < kPairCodeLength && codeLength % 2 == 1) {
       // 'Invalid Open Location Code length - '
       return nil
     }
@@ -616,7 +625,6 @@ let kSPCharset = CharacterSet.init(charactersIn: "+0")
         codeLength: codeArea.codeLength + gridArea.codeLength)
     return area
   }
-  
   
   /// Recover the nearest matching code to a specified location.
   /// Given a short Open Location Code of between four and seven characters,

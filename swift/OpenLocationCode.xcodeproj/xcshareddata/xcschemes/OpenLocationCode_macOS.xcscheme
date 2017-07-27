@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE9C7A6F1F23C9F30067DAC8"
+               BlueprintIdentifier = "BE05A96D1F2964CC00DEB62E"
                BuildableName = "OpenLocationCode.framework"
-               BlueprintName = "OpenLocationCode"
+               BlueprintName = "OpenLocationCode_macOS"
                ReferencedContainer = "container:OpenLocationCode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE9C7A781F23C9F30067DAC8"
-               BuildableName = "OpenLocationCodeTests.xctest"
-               BlueprintName = "OpenLocationCodeTests"
+               BlueprintIdentifier = "BE05A9751F2964CC00DEB62E"
+               BuildableName = "OpenLocationCode_macOSTests.xctest"
+               BlueprintName = "OpenLocationCode_macOSTests"
                ReferencedContainer = "container:OpenLocationCode.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE9C7A6F1F23C9F30067DAC8"
+            BlueprintIdentifier = "BE05A96D1F2964CC00DEB62E"
             BuildableName = "OpenLocationCode.framework"
-            BlueprintName = "OpenLocationCode"
+            BlueprintName = "OpenLocationCode_macOS"
             ReferencedContainer = "container:OpenLocationCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE9C7A6F1F23C9F30067DAC8"
+            BlueprintIdentifier = "BE05A96D1F2964CC00DEB62E"
             BuildableName = "OpenLocationCode.framework"
-            BlueprintName = "OpenLocationCode"
+            BlueprintName = "OpenLocationCode_macOS"
             ReferencedContainer = "container:OpenLocationCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE9C7A6F1F23C9F30067DAC8"
+            BlueprintIdentifier = "BE05A96D1F2964CC00DEB62E"
             BuildableName = "OpenLocationCode.framework"
-            BlueprintName = "OpenLocationCode"
+            BlueprintName = "OpenLocationCode_macOS"
             ReferencedContainer = "container:OpenLocationCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -16,6 +16,9 @@
 //
 //===----------------------------------------------------------------------===//
 //
+//  Objective-C tests. Verify that the library is accessible from ObjC and that
+//  the included library samples function correctly.
+//
 //  Authored by: William Denniss.
 //
 //===----------------------------------------------------------------------===//
@@ -28,7 +31,7 @@
 
 @implementation OpenLocationCodeObjCTests
 
-/* Test the Objective-C library examples.
+/* Tests the Objective-C library README examples.
  */
 - (void)testObjCExamples {
   // Encode a location, default accuracy.
@@ -50,7 +53,7 @@
                                                  latitude:47.5
                                                 longitude:8.5];
   
-  // Recover the full code from a short coe:
+  // Recover the full code from a short code:
   NSString *fullCodeA =
       [OpenLocationCode recoverNearestWithShortcode:@"9G8F+6X"
                                   referenceLatitude:47.4

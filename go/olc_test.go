@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package olc
+package olc_test
 
 import (
 	"bytes"
@@ -24,6 +24,8 @@ import (
 	"sync"
 	"testing"
 	"time"
+
+	. "github.com/google/open-location-code/go"
 )
 
 var (

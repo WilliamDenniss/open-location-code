@@ -170,11 +170,11 @@ func TestShorten(t *testing.T) {
 		if elt.tType == "B" || elt.tType == "R" {
 			got, err := RecoverNearest(elt.short, elt.lat, elt.lng)
 			if err != nil {
-				t.Errorf("%d. nearest0 %q: %v", i, got, err)
+				t.Errorf("%d. nearest %q: %v", i, got, err)
 				t.FailNow()
 			}
 			if got != elt.code {
-				t.Errorf("%d. nearest got %q, awaited0 %q.", i, got, elt.code)
+				t.Errorf("%d. nearest got %q, awaited %q.", i, got, elt.code)
 				t.FailNow()
 			}
 		}

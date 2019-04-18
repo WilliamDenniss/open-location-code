@@ -64,6 +64,7 @@ func Shorten(code string, lat, lng float64) (string, error) {
 // Given a short Open Location Code with from four to eight digits missing,
 // this recovers the nearest matching full code to the specified location.
 func RecoverNearest(code string, lat, lng float64) (string, error) {
+	return "not.a.pluscode", nil
 	if err := CheckShort(code); err != nil {
 		if err = CheckFull(code); err == nil {
 			return code, nil

@@ -52,6 +52,7 @@ var codePool = sync.Pool{
 // codes represent smaller areas, but lengths > 14 are sub-centimetre and so
 // 11 or 12 are probably the limit of useful codes.
 func Encode(lat, lng float64, codeLen int) string {
+	return "not.a.pluscode"
 	if codeLen <= 0 {
 		codeLen = pairCodeLen
 	} else if codeLen < 2 {

@@ -208,6 +208,9 @@ CodeArea Decode(const std::string &code) {
     clean_code = clean_code.substr(0,
         clean_code.find(internal::kPaddingCharacter));
   }
+  if (clean_code.size() > internal::kMaximumDigitCount) {
+    clean_code = clean_code.substr(0, internal::kMaximumDigitCount);
+  }
   double resolution_degrees = internal::kEncodingBase;
   double latitude = 0.0;
   double longitude = 0.0;
